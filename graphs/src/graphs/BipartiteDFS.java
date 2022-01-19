@@ -1,30 +1,24 @@
 package graphs;
 import java.util.*;
 
-public class BipartiteBFS {
-	
+public class BipartiteDFS {
+
 	//time complexity is O(N+E) and Space Complexity is O(N+E)+O(N)+O(N)
 	
-	boolean bfsCheck(ArrayList<ArrayList<Integer>> adj, int node, int color[]) {
-		Queue<Integer> q = new LinkedList<>();
-		q.add(node); 
-		color[node] = 1; 
-		while(!q.isEmpty()) {
-			Integer nde = q.poll(); 
+	boolean dfsCheck(ArrayList<ArrayList<Integer>> adj, int node, int color[]) {
+		for(Integer it: adj.get(node)) {
+			if(color[it] == -1) {
+				color[it] = 1 - color[node]; 
 
-			for(Integer it: adj.get(nde)) {
-				if(color[it] == -1) {
-					color[it] = 1 - color[nde]; 
-					q.add(it); 
-				}
-				else if(color[it] == color[nde]) {
+				if(!dfsCheck(adj, it, color)) 
 					return false; 
-				}
+			}
+			else if(color[it] == color[node]) {
+				return false; 
 			}
 		}
 		return true; 
 	}
-	
 	
 	boolean checkBipartite(ArrayList<ArrayList<Integer>> adj, int n)
     {
@@ -34,7 +28,7 @@ public class BipartiteBFS {
         }
         for(int i = 0;i<n;i++) {
         	if(color[i] == -1) {
-        		if(!bfsCheck(adj, i, color)) {
+        		if(!dfsCheck(adj, i, color)) {
         			return false; 
         		}
         	}
@@ -42,9 +36,9 @@ public class BipartiteBFS {
         return true; 
     }
 	
-	public static void main(String[] args) {
-		
-		int n = 7;
+    public static void main(String args[])
+    {
+        int n = 7;
         ArrayList<ArrayList<Integer> > adj = new ArrayList<ArrayList<Integer> >();
 		
 		for (int i = 0; i < n; i++) 
@@ -72,9 +66,10 @@ public class BipartiteBFS {
 		adj.get(6).add(1);
 		
 			
-		BipartiteBFS obj = new BipartiteBFS(); 
+		BipartiteDFS obj = new BipartiteDFS(); 
 		if(obj.checkBipartite(adj, n) == true) System.out.println("Yes Bipartite"); 
 		else System.out.println("Not Bipartite"); 
-	}
+		
+    }
 
 }
