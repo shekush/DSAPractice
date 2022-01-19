@@ -1,8 +1,6 @@
 package graphs;
 import java.util.*;
 
-import graphs.CycleDetectionBFS.Node;
-
 public class CycleDetectionDFS {
 	
 	//time complexity is O(N+E) and Space Complexity is O(N+E)+O(N)+O(N)
