@@ -3,7 +3,7 @@ import java.util.*;
 
 public class CycleDirectedDFS {
 	
-	public boolean checkHelper(int tmp, boolean[] vis,boolean[] dfsvis, ArrayList<ArrayList<Integer>> adj)
+	public boolean cycleHelper(int tmp, boolean[] vis,boolean[] dfsvis, ArrayList<ArrayList<Integer>> adj)
 	{
 		vis[tmp]=true;
 		dfsvis[tmp]=true;
@@ -11,7 +11,7 @@ public class CycleDirectedDFS {
 		{
 			if(vis[i]==false)
 			{
-				if(checkHelper(i,vis,dfsvis,adj))
+				if(cycleHelper(i,vis,dfsvis,adj))
 					return true;
 			}
 			else if(dfsvis[i])
@@ -29,7 +29,7 @@ public class CycleDirectedDFS {
 		{
 			if(vis[i]==false)
 			{
-				if(checkHelper(i,vis,dfsvis,adj))
+				if(cycleHelper(i,vis,dfsvis,adj))
 					return true;
 			}
 		}
