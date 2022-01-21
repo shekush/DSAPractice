@@ -3,13 +3,13 @@ import java.util.*;
 
 public class TopologicalDFS {
 	
-	public void topo(int tmp, Stack<Integer> s, boolean[] vis, ArrayList<ArrayList<Integer>> adj)
+	public void topoHelper(int tmp, Stack<Integer> s, boolean[] vis, ArrayList<ArrayList<Integer>> adj)
 	{
 		vis[tmp] = true;
 		for(Integer i: adj.get(tmp))
 		{
 			if(vis[i]==false)
-				topo(i,s,vis,adj);
+				topoHelper(i,s,vis,adj);
 		}
 		s.push(tmp);
 	}
@@ -22,7 +22,7 @@ public class TopologicalDFS {
 		{
 			if(vis[i]==false)
 			{
-				topo(i,s,vis,adj);
+				topoHelper(i,s,vis,adj);
 			}
 		}
 		int res[] = new int[v];
