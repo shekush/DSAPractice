@@ -21,7 +21,7 @@ public class ShortestDistanceUndirected {
 			{
 				if(item!=src)
 				{
-					if((dis[tmp]+1 < dis[item])&& dis[item]!=0)
+					if((dis[tmp]+1 < dis[item]) || dis[item]==0)
 					{
 						dis[item]=dis[tmp]+1;
 						q.add(item);
