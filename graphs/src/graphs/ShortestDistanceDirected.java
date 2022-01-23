@@ -45,6 +45,7 @@ public class ShortestDistanceDirected {
 			dis[i] = Integer.MAX_VALUE;
 		}
 		dis[src] = 0;
+		s.add(src);
 		while(!s.isEmpty())
 		{
 			int tmp=s.pop();
