@@ -32,7 +32,6 @@ public class DijkstraAlgo {
 	    }
 	}
 	
-	
 	public int[] distance(ArrayList<ArrayList<Pair>> adj, int v, int src)
 	{
 		int dis[] = new int[v+1];
