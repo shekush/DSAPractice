@@ -20,12 +20,11 @@ public class DijkstraAlgo {
 	    {
 	    	return w;
 	    }
-	    
 	    public int compare(Pair first, Pair second)
 	    {
-	    	if(first.w<second.w)
+	    	if(first.getW()<second.getW())
 	    		return -1;
-	    	else if(first.w>second.w)
+	    	else if(first.getW()>second.getW())
 	    		return 1;
 	    	else
 	    		return 0;
