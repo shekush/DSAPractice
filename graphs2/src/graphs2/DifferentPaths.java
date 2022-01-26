@@ -11,23 +11,71 @@ import java.util.PriorityQueue;
 //it also returns the kth largest path
 public class DifferentPaths {
 	
+	public class Pair implements Comparable<Pair>
+	{
+		int wt;
+		String path;
+		Pair(){}
+		Pair(int wt, String path)
+		{
+			this.wt=wt;
+			this.path=path;
+		}
+		
+		@Override
+		public int compareTo(Pair o)
+		{
+			return this.wt-o.wt;
+		}
+	}
+	
 	String smallest, largest, ceil, floor;
 	int swt=Integer.MAX_VALUE, lwt=Integer.MIN_VALUE;
 	int ceilwt=Integer.MAX_VALUE, floorwt=Integer.MIN_VALUE;
-	PriorityQueue<Edge> pq = new PriorityQueue<>();
+	PriorityQueue<Pair> pq = new PriorityQueue<>();
 
 	public void findDetails(int src, int des, ArrayList<Edge>[] adj, boolean[] vis, String psf, int wsf, int criteria, int k)
 	{
 		if(src==des)
 		{
-			System.out.println(psf);
+			if(wsf < swt)
+			{
+				swt = wsf;
+				smallest = psf;
+			}
+			if(wsf > lwt)
+			{
+				lwt=wsf;
+				largest = psf;
+			}
+			if(wsf>criteria && wsf<ceilwt)
+			{
+				ceilwt = wsf;
+				ceil = psf;
+			}
+			if(wsf<criteria && wsf>floorwt)
+			{
+				floorwt = wsf;
+				floor = psf;
+			}
+			
+			if(pq.size()<k)
+				pq.add(new Pair(wsf,psf));
+			else
+			{
+				if(wsf>pq.peek().wt)
+				{
+					pq.remove();
+					pq.add(new Pair(wsf,psf));
+				}
+			}
 			return;
 		}	
 		vis[src]=true;
 		for(Edge e : adj[src])
 		{
 			if(vis[e.getVertex()]==false)
-				findDetails(e.getVertex(), des, adj, vis, psf+e.getVertex(), wsf+e.getWeight());
+				findDetails(e.getVertex(), des, adj, vis, psf+e.getVertex(), wsf+e.getWeight(), criteria, k);
 		}
 		vis[src]=false;
 	}
