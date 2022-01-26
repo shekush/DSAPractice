@@ -2,20 +2,20 @@ package graphs2;
 
 public class Edge {
 	
-	private int s, v, w;
+	private int p, v, w;
 	
 	//constructor to create objects without any parameters
 	Edge(){}
 	
 	//constructor to create objects with parameters
-	Edge(int s, int v, int w)
+	Edge(int p, int v, int w)
 	{
-		this.s=s;
+		this.p=p;
 		this.v=v;
 		this.w=w;
 	}
 	
-	public int getSource(){ return s; }
+	public int getParent(){ return p; }
 	
 	public int getVertex(){ return v; }
 	
