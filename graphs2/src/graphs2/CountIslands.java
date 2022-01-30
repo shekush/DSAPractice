@@ -37,7 +37,6 @@ public class CountIslands
 				arr[i][j] = Integer.parseInt(inp[j]);
 			}
 		}
-		System.out.println("Input Taken");
 		CountIslands obj = new CountIslands();
 		int count=0;
 		for(int i=0; i<m; i++)

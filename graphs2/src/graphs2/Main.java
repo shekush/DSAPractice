@@ -60,8 +60,6 @@ public class Main {
 
       int src = Integer.parseInt(br.readLine());
       int dest = Integer.parseInt(br.readLine());
-
-      // write your code here
       System.out.println(haspath(graph, src, dest,new boolean[vtces]));
     }
 
