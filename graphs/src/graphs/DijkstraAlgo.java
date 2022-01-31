@@ -21,7 +21,10 @@ public class DijkstraAlgo {
 			for(Pairs i: adj.get(tmp.getV()))
 			{
 				if(dis[tmp.getV()]+i.getW() < dis[i.getV()])
+				{
 					dis[i.getV()] = dis[tmp.getV()] + i.getW();
+					pq.add(i);
+				}
 			}
 		}
 		return dis;
