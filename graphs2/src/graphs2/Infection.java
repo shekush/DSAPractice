@@ -1,4 +1,4 @@
-package graphs2;
+tpackage graphs2;
 
 import java.io.BufferedReader;
 import java.io.IOException;

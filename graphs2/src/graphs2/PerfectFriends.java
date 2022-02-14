@@ -47,7 +47,7 @@ public class PerfectFriends {
 		
 		for(int i=0; i<res.size(); i++)
 		{
-			for(int j=i+1; i<res.size(); i++)
+			for(int j=i+1; j<res.size(); j++)
 			{
 				int c = res.get(j).size() * res.get(i).size();
 				pairs = pairs + c;

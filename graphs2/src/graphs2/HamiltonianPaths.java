@@ -26,6 +26,8 @@ public class HamiltonianPaths {
 			
 			else
 				System.out.println("Hamiltonian Path: "+psf);
+			
+			return;
 		}
 		
 		vis.add(src);
@@ -57,5 +59,4 @@ public class HamiltonianPaths {
 		ob.hamiltonianPath(adj,vis,src, src, src+"");
 
 	}
-
 }
