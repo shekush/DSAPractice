@@ -37,8 +37,6 @@ public class IterativeDFS
 		Input obj = new Input();
 		ArrayList<Edge>[] adj = obj.input(v,e);
 		
-		System.out.println("Enter the time: ");
-		
 		boolean vis[] = new boolean[v];
 		Stack<Integer> s = new Stack<Integer>();
 		IterativeDFS ob = new IterativeDFS();
