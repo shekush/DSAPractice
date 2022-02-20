@@ -45,11 +45,11 @@ public class RottenOranges
 		int level=0;
 		while(!q.isEmpty())
 		{
-			Pair p = q.poll();
 			int size=q.size();
 			level++;
 			while(size-->0)
 			{
+				Pair p = q.poll();
 				for(int i=0;i<4; i++)
 				{
 					int row = p.x + dir[i][0];

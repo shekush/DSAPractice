@@ -42,12 +42,12 @@ public class DistinctIslands
 		}
 		if(j+1<arr[0].length && arr[i][j+1]==1)
 		{
-			s=s+"d";
+			s=s+"r";
 			travelDFS(arr,i,j+1);
 		}
 		if(j-1>=0 && arr[i][j-1]==1)
 		{
-			s=s+"u";
+			s=s+"l";
 			travelDFS(arr,i,j-1);
 		}
 		

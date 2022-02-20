@@ -36,9 +36,10 @@ public class FarFromLand
 		while(!q.isEmpty())
 		{
 			size=q.size();
-			Pair p = q.poll();
+			
 			while(size-->0)
 			{
+				Pair p = q.poll();
 				for(int i=0;i<4; i++)
 				{
 					int row = p.x + dir[i][0];
