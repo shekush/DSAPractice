@@ -48,7 +48,7 @@ public class MinimumBridge
 				{
 					int row = p.x + dir[i][0];
 					int col = p.y + dir[i][1];
-					if(row<0 || col<0 || row>arr.length || col>arr[0].length || arr[row][col]==1)
+					if(row<0 || col<0 || row>arr.length || col>arr[0].length || vis[row][col]==true)
 						continue;
 					
 					if(arr[row][col]==1)
@@ -71,7 +71,7 @@ public class MinimumBridge
 		{
 			int r = i + dir[k][0];
 			int c = j + dir[k][1];
-			if(r<0 || c<0 || r>=arr.length || c>=arr[0].length || arr[r][c]==0 || vis[i][j]==true)
+			if(r<0 || c<0 || r>=arr.length || c>=arr[0].length || arr[r][c]==0 || vis[r][c]==true)
 				continue;
 			dfs(arr,vis,q,r,c);
 		}
