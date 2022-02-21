@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class MinSwapsToSort 
 {
-	
 	class Pair implements Comparable<Pair>
 	{
 		int ele, ind;
