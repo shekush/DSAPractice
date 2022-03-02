@@ -28,8 +28,8 @@ public class Puzzle
 				}
 				else
 				{
-					hm.put(word.charAt(i), new ArrayList<Integer>());
-					hm.get(word.charAt(i)).add(mask);
+					hm.put(c, new ArrayList<Integer>());
+					hm.get(c).add(mask);
 				}
 			}
 		}
