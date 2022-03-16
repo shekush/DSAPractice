@@ -33,6 +33,7 @@ public class NonPair
 		for(String s: inp)
 		{
 			arr[i] = Integer.parseInt(inp[i]);
+			i++;
 		}
 		solution(arr);
 	}
