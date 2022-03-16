@@ -6,7 +6,7 @@ public class OddInPairOfThree
 {
 	public static void solution(int[] arr)
 	{
-		int threeN=Integer.MAX_VALUE, threeN1=0, threeN2=0;
+		int threeN=-1, threeN1=0, threeN2=0;
 		int commonThreeN, commonThreeN1, commonThreeN2;
 		
 		for(int i=0; i<arr.length; i++)
