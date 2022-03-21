@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 //in this question we are given an array containing numbers
@@ -15,9 +16,21 @@ public class FindTriplets
 	public static void solution(int[] arr)
 	{
 		int c = 0;
-		
+		for(int i=0; i<arr.length; i++)
+		{
+			int val = arr[i];
+			for(int k = i+1; k<arr.length; k++)
+			{
+				val = val ^ arr[k];
+				if(val==0)
+				{
+					c+=k-i;
+				}
+			}
+		}
+		System.out.println(c);
 	}
-	public static void main(String[] args) 
+	public static void main(String[] args) throws IOException
 	{
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Enter the numbers");
