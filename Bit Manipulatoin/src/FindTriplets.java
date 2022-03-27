@@ -12,7 +12,6 @@ import java.io.InputStreamReader;
 
 public class FindTriplets 
 {
-
 	public static void solution(int[] arr)
 	{
 		int c = 0;
@@ -44,5 +43,4 @@ public class FindTriplets
 		}
 		solution(arr);
 	}
-
 }

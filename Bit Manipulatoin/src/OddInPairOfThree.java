@@ -35,7 +35,7 @@ public class OddInPairOfThree
 		int i=0;
 		for(String s: inp)
 		{
-			arr[i] = Integer.parseInt(inp[i]);
+			arr[i] = Integer.parseInt(s);
 			i++;
 		}
 		solution(arr);
