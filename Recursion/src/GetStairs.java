@@ -16,27 +16,29 @@ public class GetStairs
 			return res;
 		}
 		if(n<0)
-			return null;
-		
-		ArrayList<String> res1 = findAllPaths(n-1);
-		ArrayList<String> res2 = findAllPaths(n-2);
-		ArrayList<String> res3 = findAllPaths(n-3);
-		
-		ArrayList<String> res = new ArrayList<>();
-		
-		for(String path : res1)
 		{
-			res.add(n+" "+path);
+			ArrayList<String> res = new ArrayList<String>();
+			return res;
 		}
-		for(String path : res2)
-		{
-			res.add(n+" "+path);
-		}
-		for(String path : res3)
-		{
-			res.add(n+" "+path);
-		}
-		return res;
+			ArrayList<String> res1 = findAllPaths(n-1);
+			ArrayList<String> res2 = findAllPaths(n-2);
+			ArrayList<String> res3 = findAllPaths(n-3);
+			
+			ArrayList<String> res = new ArrayList<>();
+			
+			for(String path : res1)
+			{
+				res.add(n+" "+path);
+			}
+			for(String path : res2)
+			{
+				res.add(n+" "+path);
+			}
+			for(String path : res3)
+			{
+				res.add(n+" "+path);
+			}
+			return res;
 	}
 	public static void main(String[] args) throws IOException
 	{
