@@ -7,7 +7,7 @@ public class RSB {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the number: ");
 		int n = sc.nextInt();
-		int rsb = n & -n;
+		int rsb = (n & -n);
 		System.out.println(rsb);
 	}
 }
