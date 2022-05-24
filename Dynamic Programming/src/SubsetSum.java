@@ -8,15 +8,12 @@ public class SubsetSum
 		{
 			dp[i][0]=true;
 		}
-		
 		for(int i=1; i<dp.length; i++)
 		{
 			for(int j=1; j<dp[0].length; j++)
 			{
-				if( (dp[i-1][j]==true) || ( (j-set[i]>=0) && (dp[i][j-set[i]]==true) ))
-				{
+				if(( dp[i-1][j]==true) || ((j-set[i-1]>=0) && (dp[i][j-set[i-1]]==true)))
 					dp[i][j]=true;
-				}
 			}
 		}
 	}
@@ -38,6 +35,7 @@ public class SubsetSum
 		
 		fillDP(dp,set);
 		System.out.println(dp[n][target]);
+		sc.close();
 	}
 
 }
