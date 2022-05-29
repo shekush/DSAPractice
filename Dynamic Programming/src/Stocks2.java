@@ -28,11 +28,11 @@ public class Stocks2
 			}
 			else
 			{
-				overallProfit = prices[buy]-prices[sell];
+				overallProfit += prices[sell]-prices[buy];
 				buy = sell = i;
 			}
 		}
-		overallProfit = prices[sell]-prices[buy];
+		overallProfit += prices[sell]-prices[buy];
 		System.out.println(overallProfit);
 		sc.close();
 
