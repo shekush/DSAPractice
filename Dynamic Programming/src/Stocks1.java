@@ -15,7 +15,7 @@ public class Stocks1 {
 		}
 		
 		int minPrice = Integer.MAX_VALUE;
-		int overallProfit = Integer.MAX_VALUE, currentProfit;
+		int overallProfit = Integer.MIN_VALUE, currentProfit;
 		
 		for(int i=0; i<n; i++)
 		{
@@ -23,7 +23,7 @@ public class Stocks1 {
 				minPrice = prices[i];
 			
 			currentProfit = prices[i] - minPrice;
-			if(currentProfit<overallProfit)
+			if(currentProfit>overallProfit)
 				overallProfit = currentProfit;
 		}
 		
