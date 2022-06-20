@@ -12,7 +12,7 @@ public class SubsetSum
 		{
 			for(int j=1; j<dp[0].length; j++)
 			{
-				if(( dp[i-1][j]==true) || ((j-set[i-1]>=0) && (dp[i][j-set[i-1]]==true)))
+				if(( dp[i-1][j]==true) || ((j-set[i-1]>=0) && (dp[i-1][j-set[i-1]]==true)))
 					dp[i][j]=true;
 			}
 		}
