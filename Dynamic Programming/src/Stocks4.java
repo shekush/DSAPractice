@@ -18,7 +18,7 @@ public class Stocks4
 		}
 		
 		int buyState = -prices[0], newBuyState;
-		int sellState = 0, newSellState;
+		int sellState = 0, newSellState = 0;
 		int cooledState = 0, newCooledState;
 		
 		for(int i=1; i<n; i++)
